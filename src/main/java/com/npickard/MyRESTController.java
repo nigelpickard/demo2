@@ -1,5 +1,6 @@
 package com.npickard;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -9,6 +10,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class MyRESTController {
 
+    @Autowired
+    MySample mySample;
+
     @RequestMapping("/")
     public String index() {
         return "This is a message from MyHelloController!";
@@ -16,6 +20,9 @@ public class MyRESTController {
 
     @RequestMapping("/test")
     public String test() {
+
+        mySample.doThis();
+
         return "This is a TEST message from MyHelloController!";
     }
 
