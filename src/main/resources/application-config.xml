@@ -15,5 +15,9 @@
 		<property name="password" value="password" />
 	</bean>
 
+	<!--org.hibernate.SessionFactory-->
+	<bean id="sessionFactory" class="org.hibernate.SessionFactory">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
 
 </beans>
